@@ -94,6 +94,8 @@ export const Header: React.FC<HeaderProps> = ({
       onNavigate(viewId as ViewType);
     }
     setShowProfileDropdown(false);
+    // Scroll to top after navigation
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const getUserDisplayName = () => {

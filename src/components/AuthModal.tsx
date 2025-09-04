@@ -77,6 +77,8 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLogin }
         onLogin(authenticatedUser);
         onClose();
         setFormData({ name: '', email: '', phone: '', password: '' });
+        // Scroll to top after successful login
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     } catch (err) {
       setError('An error occurred. Please try again.');

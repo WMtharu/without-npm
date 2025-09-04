@@ -524,6 +524,8 @@ export const MaterialListingPage: React.FC<MaterialListingPageProps> = ({ onBack
                   <button
                     onClick={() => setSelectedMaterial(item)}
                     className="w-full flex items-center justify-center bg-blue-500 text-white py-3 px-4 rounded-xl hover:bg-blue-600 transition-colors font-semibold"
+                      // Scroll to top when viewing material details
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
                   >
                     <Eye className="w-4 h-4 mr-2" />
                     View Details

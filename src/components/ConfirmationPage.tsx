@@ -157,7 +157,11 @@ export const ConfirmationPage: React.FC<ConfirmationPageProps> = ({ onAction, re
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center max-w-2xl mx-auto">
               <button
-                onClick={() => onAction('dashboard')}
+                onClick={() => {
+                  onAction('dashboard');
+                  // Scroll to top when navigating to dashboard
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
                 className="group flex-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl flex items-center justify-center"
               >
                 <LayoutDashboard className="mr-3 w-6 h-6 group-hover:scale-110 transition-transform" />
@@ -165,7 +169,11 @@ export const ConfirmationPage: React.FC<ConfirmationPageProps> = ({ onAction, re
               </button>
               
               <button
-                onClick={() => onAction('services')}
+                onClick={() => {
+                  onAction('services');
+                  // Scroll to top when navigating to services
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
                 className={`group flex-1 bg-gradient-to-r ${getRoleColor(registrationData?.role)} text-white px-8 py-4 rounded-xl hover:shadow-xl transition-all duration-300 font-semibold text-lg shadow-lg flex items-center justify-center`}
               >
                 <LayoutDashboard className="mr-3 w-6 h-6 group-hover:scale-110 transition-transform" />
